@@ -1,0 +1,458 @@
+;
+; Archive created at 2019-08-25 08:46:57 CEST
+;     dbname: appdev
+;     TOC Entries: 448
+;     Compression: 9
+;     Dump Version: 1.13-0
+;     Format: CUSTOM
+;     Integer: 4 bytes
+;     Offset: 8 bytes
+;     Dumped from database version: 10.10
+;     Dumped by pg_dump version: 12devel
+;
+;
+; Selected TOC Entries:
+;
+23; 2615 27568 SCHEMA - chinook appdev
+32; 2615 27569 SCHEMA - eav appdev
+20; 2615 27570 SCHEMA - f1db appdev
+39; 2615 375939 SCHEMA - geolite appdev
+17; 2615 27571 SCHEMA - geoname appdev
+37; 2615 288823 SCHEMA - imdb appdev
+21; 2615 289375 SCHEMA - lastfm appdev
+19; 2615 27572 SCHEMA - magic appdev
+27; 2615 27573 SCHEMA - moma appdev
+26; 2615 27574 SCHEMA - opendata appdev
+15; 2615 27575 SCHEMA - raw appdev
+24; 2615 27576 SCHEMA - sample appdev
+18; 2615 27577 SCHEMA - sandbox appdev
+34; 2615 27578 SCHEMA - twcache appdev
+25; 2615 27579 SCHEMA - tweet appdev
+;10; 3079 26945 EXTENSION - btree_gist 
+;5087; 0 0 COMMENT - EXTENSION btree_gist 
+;6; 3079 374646 EXTENSION - cube 
+;5088; 0 0 COMMENT - EXTENSION cube 
+;5; 3079 374733 EXTENSION - earthdistance 
+;5089; 0 0 COMMENT - EXTENSION earthdistance 
+;2; 3079 378460 EXTENSION - hll 
+;5090; 0 0 COMMENT - EXTENSION hll 
+;9; 3079 288885 EXTENSION - hstore 
+;5091; 0 0 COMMENT - EXTENSION hstore 
+;7; 3079 289397 EXTENSION - intarray 
+;5092; 0 0 COMMENT - EXTENSION intarray 
+;4; 3079 375364 EXTENSION - ip4r 
+;3; 3079 377473 EXTENSION - pg_prewarm 
+;5093; 0 0 COMMENT - EXTENSION pg_prewarm 
+;8; 3079 289026 EXTENSION - pg_trgm 
+;5094; 0 0 COMMENT - EXTENSION pg_trgm 
+1417; 1247 27582 TYPE public rate_t appdev
+1420; 1247 27584 TYPE tweet action_t appdev
+541; 1255 28435 FUNCTION chinook get_all_albums(bigint) cdstore
+1026; 1255 28434 FUNCTION chinook get_all_albums(text) cdstore
+976; 1255 375963 FUNCTION moma audit() appdev
+532; 1255 27593 FUNCTION public random(integer, integer) appdev
+533; 1255 27594 FUNCTION public random(timestamp with time zone, timestamp with time zone) appdev
+1025; 1255 28419 FUNCTION public syncrep_important_delta() appdev
+534; 1255 27595 FUNCTION sandbox lorem(integer) appdev
+1024; 1255 378549 FUNCTION tweet update_unique_visitors(bigint) appdev
+229; 1259 27596 TABLE chinook album appdev
+230; 1259 27602 TABLE chinook artist appdev
+320; 1259 256048 TABLE chinook cars appdev
+319; 1259 256039 TABLE chinook color appdev
+318; 1259 256037 SEQUENCE chinook color_id_seq appdev
+5095; 0 0 SEQUENCE OWNED BY chinook color_id_seq appdev
+317; 1259 251994 TABLE chinook commitlog appdev
+231; 1259 27608 TABLE chinook customer appdev
+232; 1259 27614 TABLE chinook employee appdev
+233; 1259 27620 TABLE chinook genre appdev
+234; 1259 27626 TABLE chinook invoice appdev
+235; 1259 27632 TABLE chinook invoiceline appdev
+236; 1259 27638 TABLE chinook mediatype appdev
+237; 1259 27644 TABLE chinook playlist appdev
+238; 1259 27650 TABLE chinook playlisttrack appdev
+239; 1259 27653 TABLE chinook track appdev
+240; 1259 27659 TABLE eav customer appdev
+241; 1259 27665 SEQUENCE eav customer_id_seq appdev
+5096; 0 0 SEQUENCE OWNED BY eav customer_id_seq appdev
+242; 1259 27667 TABLE eav params appdev
+243; 1259 27673 TABLE eav support appdev
+244; 1259 27677 TABLE eav support_contract appdev
+245; 1259 27683 SEQUENCE eav support_contract_id_seq appdev
+5097; 0 0 SEQUENCE OWNED BY eav support_contract_id_seq appdev
+246; 1259 27685 TABLE eav support_contract_type appdev
+247; 1259 27691 SEQUENCE eav support_contract_type_id_seq appdev
+5098; 0 0 SEQUENCE OWNED BY eav support_contract_type_id_seq appdev
+248; 1259 27693 TABLE f1db circuits appdev
+249; 1259 27704 SEQUENCE f1db circuits_circuitid_seq appdev
+5099; 0 0 SEQUENCE OWNED BY f1db circuits_circuitid_seq appdev
+250; 1259 27706 TABLE f1db constructorresults appdev
+251; 1259 27712 SEQUENCE f1db constructorresults_constructorresultsid_seq appdev
+5100; 0 0 SEQUENCE OWNED BY f1db constructorresults_constructorresultsid_seq appdev
+252; 1259 27714 TABLE f1db constructors appdev
+253; 1259 27724 SEQUENCE f1db constructors_constructorid_seq appdev
+5101; 0 0 SEQUENCE OWNED BY f1db constructors_constructorid_seq appdev
+254; 1259 27726 TABLE f1db constructorstandings appdev
+255; 1259 27734 SEQUENCE f1db constructorstandings_constructorstandingsid_seq appdev
+5102; 0 0 SEQUENCE OWNED BY f1db constructorstandings_constructorstandingsid_seq appdev
+256; 1259 27736 TABLE f1db drivers appdev
+257; 1259 27748 SEQUENCE f1db drivers_driverid_seq appdev
+5103; 0 0 SEQUENCE OWNED BY f1db drivers_driverid_seq appdev
+258; 1259 27750 TABLE f1db driverstandings appdev
+259; 1259 27758 SEQUENCE f1db driverstandings_driverstandingsid_seq appdev
+5104; 0 0 SEQUENCE OWNED BY f1db driverstandings_driverstandingsid_seq appdev
+260; 1259 27760 TABLE f1db laptimes appdev
+261; 1259 27764 TABLE f1db pitstops appdev
+262; 1259 27768 TABLE f1db qualifying appdev
+263; 1259 27781 SEQUENCE f1db qualifying_qualifyid_seq appdev
+5105; 0 0 SEQUENCE OWNED BY f1db qualifying_qualifyid_seq appdev
+264; 1259 27783 TABLE f1db races appdev
+265; 1259 27794 SEQUENCE f1db races_raceid_seq appdev
+5106; 0 0 SEQUENCE OWNED BY f1db races_raceid_seq appdev
+266; 1259 27796 TABLE f1db results appdev
+267; 1259 27815 SEQUENCE f1db results_resultid_seq appdev
+5107; 0 0 SEQUENCE OWNED BY f1db results_resultid_seq appdev
+268; 1259 27817 TABLE f1db seasons appdev
+269; 1259 27822 TABLE f1db status appdev
+270; 1259 27826 SEQUENCE f1db status_statusid_seq appdev
+5108; 0 0 SEQUENCE OWNED BY f1db status_statusid_seq appdev
+326; 1259 375948 TABLE geolite blocks appdev
+325; 1259 375940 TABLE geolite location appdev
+271; 1259 27828 TABLE geoname class appdev
+272; 1259 27834 TABLE geoname continent appdev
+273; 1259 27840 TABLE geoname country appdev
+274; 1259 27846 TABLE geoname district appdev
+275; 1259 27852 TABLE geoname feature appdev
+276; 1259 27858 TABLE geoname geoname appdev
+277; 1259 27864 TABLE geoname neighbour appdev
+278; 1259 27867 TABLE geoname region appdev
+321; 1259 288824 TABLE imdb akas appdev
+322; 1259 289300 TABLE imdb name appdev
+323; 1259 289324 TABLE imdb uname appdev
+331; 1259 439080 TABLE lastfm tags appdev
+334; 1259 445835 SEQUENCE lastfm tags_rowid_seq appdev
+5109; 0 0 SEQUENCE OWNED BY lastfm tags_rowid_seq appdev
+333; 1259 439092 TABLE lastfm tid_tag appdev
+332; 1259 439086 TABLE lastfm tids appdev
+335; 1259 445845 SEQUENCE lastfm tids_rowid_seq appdev
+5110; 0 0 SEQUENCE OWNED BY lastfm tids_rowid_seq appdev
+324; 1259 289530 TABLE lastfm track appdev
+336; 1259 445855 VIEW lastfm v_track_tags appdev
+337; 1259 445859 MATERIALIZED VIEW lastfm track_tags appdev
+279; 1259 27873 TABLE magic allsets appdev
+280; 1259 27879 TABLE magic cards appdev
+281; 1259 27885 TABLE magic sets appdev
+282; 1259 27891 TABLE moma artist appdev
+327; 1259 375956 TABLE moma audit appdev
+283; 1259 27897 TABLE opendata archives_planete appdev
+284; 1259 27903 TABLE public access_log appdev
+339; 1259 450705 TABLE public cities dim
+285; 1259 27915 TABLE public factbook appdev
+286; 1259 27918 TABLE public hashtag appdev
+287; 1259 27924 TABLE public hello appdev
+338; 1259 450696 TABLE public pubnames appdev
+288; 1259 27930 TABLE public rate appdev
+289; 1259 27936 TABLE public rates appdev
+290; 1259 27942 TABLE public tweet appdev
+291; 1259 27948 TABLE raw admin1 appdev
+292; 1259 27954 TABLE raw admin2 appdev
+293; 1259 27960 TABLE raw country appdev
+294; 1259 27966 TABLE raw feature appdev
+295; 1259 27972 TABLE raw geonames appdev
+296; 1259 27978 TABLE raw rates appdev
+297; 1259 27984 TABLE sample geonames appdev
+298; 1259 27990 TABLE sandbox article appdev
+299; 1259 27996 SEQUENCE sandbox article_id_seq appdev
+5111; 0 0 SEQUENCE OWNED BY sandbox article_id_seq appdev
+300; 1259 27998 TABLE sandbox category appdev
+301; 1259 28004 SEQUENCE sandbox category_id_seq appdev
+5112; 0 0 SEQUENCE OWNED BY sandbox category_id_seq appdev
+302; 1259 28006 TABLE sandbox comment appdev
+303; 1259 28012 SEQUENCE sandbox comment_id_seq appdev
+5113; 0 0 SEQUENCE OWNED BY sandbox comment_id_seq appdev
+304; 1259 28014 TABLE sandbox lorem appdev
+305; 1259 28020 VIEW tweet message_with_counters appdev
+306; 1259 28026 MATERIALIZED VIEW twcache message appdev
+307; 1259 28033 TABLE tweet activity appdev
+308; 1259 28037 SEQUENCE tweet activity_id_seq appdev
+5114; 0 0 SEQUENCE OWNED BY tweet activity_id_seq appdev
+309; 1259 28039 TABLE tweet follower appdev
+310; 1259 28042 TABLE tweet list appdev
+311; 1259 28048 SEQUENCE tweet list_listid_seq appdev
+5115; 0 0 SEQUENCE OWNED BY tweet list_listid_seq appdev
+312; 1259 28050 TABLE tweet membership appdev
+313; 1259 28053 TABLE tweet message appdev
+314; 1259 28060 SEQUENCE tweet message_messageid_seq appdev
+5116; 0 0 SEQUENCE OWNED BY tweet message_messageid_seq appdev
+330; 1259 378539 TABLE tweet uniques appdev
+315; 1259 28062 TABLE tweet users appdev
+316; 1259 28068 SEQUENCE tweet users_userid_seq appdev
+5117; 0 0 SEQUENCE OWNED BY tweet users_userid_seq appdev
+329; 1259 377455 TABLE tweet visitor appdev
+328; 1259 377453 SEQUENCE tweet visitors_id_seq appdev
+5118; 0 0 SEQUENCE OWNED BY tweet visitors_id_seq appdev
+4648; 2604 256042 DEFAULT chinook color id appdev
+4567; 2604 28070 DEFAULT eav customer id appdev
+4569; 2604 28071 DEFAULT eav support_contract id appdev
+4570; 2604 28072 DEFAULT eav support_contract_type id appdev
+4576; 2604 28073 DEFAULT f1db circuits circuitid appdev
+4580; 2604 28074 DEFAULT f1db constructorresults constructorresultsid appdev
+4585; 2604 28075 DEFAULT f1db constructors constructorid appdev
+4591; 2604 28076 DEFAULT f1db constructorstandings constructorstandingsid appdev
+4598; 2604 28077 DEFAULT f1db drivers driverid appdev
+4604; 2604 28078 DEFAULT f1db driverstandings driverstandingsid appdev
+4614; 2604 28079 DEFAULT f1db qualifying qualifyid appdev
+4620; 2604 28080 DEFAULT f1db races raceid appdev
+4634; 2604 28081 DEFAULT f1db results resultid appdev
+4637; 2604 28082 DEFAULT f1db status statusid appdev
+4652; 2604 445837 DEFAULT lastfm tags rowid appdev
+4653; 2604 445847 DEFAULT lastfm tids rowid appdev
+4639; 2604 28083 DEFAULT sandbox article id appdev
+4640; 2604 28084 DEFAULT sandbox category id appdev
+4641; 2604 28085 DEFAULT sandbox comment id appdev
+4643; 2604 28086 DEFAULT tweet activity id appdev
+4644; 2604 28087 DEFAULT tweet list listid appdev
+4646; 2604 28088 DEFAULT tweet message messageid appdev
+4647; 2604 28089 DEFAULT tweet users userid appdev
+4650; 2604 377458 DEFAULT tweet visitor id appdev
+4971; 0 27596 TABLE DATA chinook album appdev
+4972; 0 27602 TABLE DATA chinook artist appdev
+5061; 0 256048 TABLE DATA chinook cars appdev
+5060; 0 256039 TABLE DATA chinook color appdev
+5058; 0 251994 TABLE DATA chinook commitlog appdev
+4973; 0 27608 TABLE DATA chinook customer appdev
+4974; 0 27614 TABLE DATA chinook employee appdev
+4975; 0 27620 TABLE DATA chinook genre appdev
+4976; 0 27626 TABLE DATA chinook invoice appdev
+4977; 0 27632 TABLE DATA chinook invoiceline appdev
+4978; 0 27638 TABLE DATA chinook mediatype appdev
+4979; 0 27644 TABLE DATA chinook playlist appdev
+4980; 0 27650 TABLE DATA chinook playlisttrack appdev
+4981; 0 27653 TABLE DATA chinook track appdev
+4982; 0 27659 TABLE DATA eav customer appdev
+4984; 0 27667 TABLE DATA eav params appdev
+4985; 0 27673 TABLE DATA eav support appdev
+4986; 0 27677 TABLE DATA eav support_contract appdev
+4988; 0 27685 TABLE DATA eav support_contract_type appdev
+4990; 0 27693 TABLE DATA f1db circuits appdev
+4992; 0 27706 TABLE DATA f1db constructorresults appdev
+4994; 0 27714 TABLE DATA f1db constructors appdev
+4996; 0 27726 TABLE DATA f1db constructorstandings appdev
+4998; 0 27736 TABLE DATA f1db drivers appdev
+5000; 0 27750 TABLE DATA f1db driverstandings appdev
+5002; 0 27760 TABLE DATA f1db laptimes appdev
+5003; 0 27764 TABLE DATA f1db pitstops appdev
+5004; 0 27768 TABLE DATA f1db qualifying appdev
+5006; 0 27783 TABLE DATA f1db races appdev
+5008; 0 27796 TABLE DATA f1db results appdev
+5010; 0 27817 TABLE DATA f1db seasons appdev
+5011; 0 27822 TABLE DATA f1db status appdev
+5067; 0 375948 TABLE DATA geolite blocks appdev
+5066; 0 375940 TABLE DATA geolite location appdev
+5013; 0 27828 TABLE DATA geoname class appdev
+5014; 0 27834 TABLE DATA geoname continent appdev
+5015; 0 27840 TABLE DATA geoname country appdev
+5016; 0 27846 TABLE DATA geoname district appdev
+5017; 0 27852 TABLE DATA geoname feature appdev
+5018; 0 27858 TABLE DATA geoname geoname appdev
+5019; 0 27864 TABLE DATA geoname neighbour appdev
+5020; 0 27867 TABLE DATA geoname region appdev
+5062; 0 288824 TABLE DATA imdb akas appdev
+5063; 0 289300 TABLE DATA imdb name appdev
+5064; 0 289324 TABLE DATA imdb uname appdev
+5072; 0 439080 TABLE DATA lastfm tags appdev
+5074; 0 439092 TABLE DATA lastfm tid_tag appdev
+5073; 0 439086 TABLE DATA lastfm tids appdev
+5065; 0 289530 TABLE DATA lastfm track appdev
+5021; 0 27873 TABLE DATA magic allsets appdev
+5022; 0 27879 TABLE DATA magic cards appdev
+5023; 0 27885 TABLE DATA magic sets appdev
+5024; 0 27891 TABLE DATA moma artist appdev
+5068; 0 375956 TABLE DATA moma audit appdev
+5025; 0 27897 TABLE DATA opendata archives_planete appdev
+5026; 0 27903 TABLE DATA public access_log appdev
+5079; 0 450705 TABLE DATA public cities dim
+5027; 0 27915 TABLE DATA public factbook appdev
+5028; 0 27918 TABLE DATA public hashtag appdev
+5029; 0 27924 TABLE DATA public hello appdev
+5078; 0 450696 TABLE DATA public pubnames appdev
+5030; 0 27930 TABLE DATA public rate appdev
+5031; 0 27936 TABLE DATA public rates appdev
+5032; 0 27942 TABLE DATA public tweet appdev
+5033; 0 27948 TABLE DATA raw admin1 appdev
+5034; 0 27954 TABLE DATA raw admin2 appdev
+5035; 0 27960 TABLE DATA raw country appdev
+5036; 0 27966 TABLE DATA raw feature appdev
+5037; 0 27972 TABLE DATA raw geonames appdev
+5038; 0 27978 TABLE DATA raw rates appdev
+5039; 0 27984 TABLE DATA sample geonames appdev
+5040; 0 27990 TABLE DATA sandbox article appdev
+5042; 0 27998 TABLE DATA sandbox category appdev
+5044; 0 28006 TABLE DATA sandbox comment appdev
+5046; 0 28014 TABLE DATA sandbox lorem appdev
+5048; 0 28033 TABLE DATA tweet activity appdev
+5050; 0 28039 TABLE DATA tweet follower appdev
+5051; 0 28042 TABLE DATA tweet list appdev
+5053; 0 28050 TABLE DATA tweet membership appdev
+5054; 0 28053 TABLE DATA tweet message appdev
+5071; 0 378539 TABLE DATA tweet uniques appdev
+5056; 0 28062 TABLE DATA tweet users appdev
+5070; 0 377455 TABLE DATA tweet visitor appdev
+5119; 0 0 SEQUENCE SET chinook color_id_seq appdev
+5120; 0 0 SEQUENCE SET eav customer_id_seq appdev
+5121; 0 0 SEQUENCE SET eav support_contract_id_seq appdev
+5122; 0 0 SEQUENCE SET eav support_contract_type_id_seq appdev
+5123; 0 0 SEQUENCE SET f1db circuits_circuitid_seq appdev
+5124; 0 0 SEQUENCE SET f1db constructorresults_constructorresultsid_seq appdev
+5125; 0 0 SEQUENCE SET f1db constructors_constructorid_seq appdev
+5126; 0 0 SEQUENCE SET f1db constructorstandings_constructorstandingsid_seq appdev
+5127; 0 0 SEQUENCE SET f1db drivers_driverid_seq appdev
+5128; 0 0 SEQUENCE SET f1db driverstandings_driverstandingsid_seq appdev
+5129; 0 0 SEQUENCE SET f1db qualifying_qualifyid_seq appdev
+5130; 0 0 SEQUENCE SET f1db races_raceid_seq appdev
+5131; 0 0 SEQUENCE SET f1db results_resultid_seq appdev
+5132; 0 0 SEQUENCE SET f1db status_statusid_seq appdev
+5133; 0 0 SEQUENCE SET lastfm tags_rowid_seq appdev
+5134; 0 0 SEQUENCE SET lastfm tids_rowid_seq appdev
+5135; 0 0 SEQUENCE SET sandbox article_id_seq appdev
+5136; 0 0 SEQUENCE SET sandbox category_id_seq appdev
+5137; 0 0 SEQUENCE SET sandbox comment_id_seq appdev
+5138; 0 0 SEQUENCE SET tweet activity_id_seq appdev
+5139; 0 0 SEQUENCE SET tweet list_listid_seq appdev
+5140; 0 0 SEQUENCE SET tweet message_messageid_seq appdev
+5141; 0 0 SEQUENCE SET tweet users_userid_seq appdev
+5142; 0 0 SEQUENCE SET tweet visitors_id_seq appdev
+4790; 2606 256047 CONSTRAINT chinook color color_pkey appdev
+4788; 2606 252001 CONSTRAINT chinook commitlog commitlog_pkey appdev
+4656; 2606 28100 CONSTRAINT chinook album idx_16944_ipk_album appdev
+4658; 2606 28102 CONSTRAINT chinook artist idx_16950_ipk_artist appdev
+4661; 2606 28104 CONSTRAINT chinook customer idx_16956_ipk_customer appdev
+4664; 2606 28106 CONSTRAINT chinook employee idx_16962_ipk_employee appdev
+4666; 2606 28108 CONSTRAINT chinook genre idx_16968_ipk_genre appdev
+4669; 2606 28110 CONSTRAINT chinook invoice idx_16974_ipk_invoice appdev
+4673; 2606 28112 CONSTRAINT chinook invoiceline idx_16980_ipk_invoiceline appdev
+4675; 2606 28114 CONSTRAINT chinook mediatype idx_16986_ipk_mediatype appdev
+4677; 2606 28116 CONSTRAINT chinook playlist idx_16992_ipk_playlist appdev
+4680; 2606 28118 CONSTRAINT chinook playlisttrack idx_16998_ipk_playlisttrack appdev
+4686; 2606 28120 CONSTRAINT chinook track idx_17001_ipk_track appdev
+4688; 2606 28122 CONSTRAINT eav customer customer_pkey appdev
+4690; 2606 28124 CONSTRAINT eav params params_pkey appdev
+4694; 2606 28126 CONSTRAINT eav support_contract support_contract_pkey appdev
+4698; 2606 28128 CONSTRAINT eav support_contract_type support_contract_type_pkey appdev
+4696; 2606 28130 CONSTRAINT eav support_contract support_contract_type_validity_excl appdev
+4692; 2606 28132 CONSTRAINT eav support support_pkey appdev
+4701; 2606 28134 CONSTRAINT f1db circuits idx_17102_primary appdev
+4704; 2606 28136 CONSTRAINT f1db constructorresults idx_17116_primary appdev
+4707; 2606 28138 CONSTRAINT f1db constructors idx_17125_primary appdev
+4709; 2606 28140 CONSTRAINT f1db constructorstandings idx_17138_primary appdev
+4711; 2606 28142 CONSTRAINT f1db drivers idx_17149_primary appdev
+4714; 2606 28144 CONSTRAINT f1db driverstandings idx_17164_primary appdev
+4716; 2606 28146 CONSTRAINT f1db laptimes idx_17173_primary appdev
+4719; 2606 28148 CONSTRAINT f1db pitstops idx_17177_primary appdev
+4722; 2606 28150 CONSTRAINT f1db qualifying idx_17183_primary appdev
+4724; 2606 28152 CONSTRAINT f1db races idx_17199_primary appdev
+4727; 2606 28154 CONSTRAINT f1db results idx_17213_primary appdev
+4729; 2606 28156 CONSTRAINT f1db seasons idx_17233_primary appdev
+4732; 2606 28158 CONSTRAINT f1db status idx_17240_primary appdev
+4796; 2606 375953 CONSTRAINT geolite location location_pkey appdev
+4734; 2606 28160 CONSTRAINT geoname class class_pkey appdev
+4736; 2606 28162 CONSTRAINT geoname continent continent_pkey appdev
+4738; 2606 28164 CONSTRAINT geoname country country_pkey appdev
+4740; 2606 28166 CONSTRAINT geoname district district_pkey appdev
+4742; 2606 28168 CONSTRAINT geoname feature feature_pkey appdev
+4745; 2606 28170 CONSTRAINT geoname geoname geoname_pkey appdev
+4747; 2606 28172 CONSTRAINT geoname neighbour neighbour_pkey appdev
+4749; 2606 28174 CONSTRAINT geoname region region_pkey appdev
+4751; 2606 28176 CONSTRAINT moma artist artist_pkey appdev
+4754; 2606 28180 CONSTRAINT public hashtag hashtag_pkey appdev
+4756; 2606 28182 CONSTRAINT public rate rate_currency_validity_excl appdev
+4758; 2606 28186 CONSTRAINT public rates rates_currency_validity_excl appdev
+4760; 2606 28188 CONSTRAINT public tweet tweet_pkey appdev
+4762; 2606 28190 CONSTRAINT sandbox article article_pkey appdev
+4765; 2606 28192 CONSTRAINT sandbox category category_pkey appdev
+4768; 2606 28194 CONSTRAINT sandbox comment comment_pkey appdev
+4772; 2606 28198 CONSTRAINT tweet activity activity_pkey appdev
+4774; 2606 28200 CONSTRAINT tweet follower follower_pkey appdev
+4776; 2606 28202 CONSTRAINT tweet list list_owner_name_key appdev
+4778; 2606 28204 CONSTRAINT tweet list list_pkey appdev
+4780; 2606 28206 CONSTRAINT tweet membership membership_pkey appdev
+4782; 2606 28208 CONSTRAINT tweet message message_pkey appdev
+4803; 2606 378546 CONSTRAINT tweet uniques uniques_pkey appdev
+4784; 2606 28210 CONSTRAINT tweet users users_pkey appdev
+4786; 2606 28212 CONSTRAINT tweet users users_uname_key appdev
+4799; 2606 377466 CONSTRAINT tweet visitor visitors_messageid_datetime_ipaddr_key appdev
+4801; 2606 377464 CONSTRAINT tweet visitor visitors_pkey appdev
+4654; 1259 28213 INDEX chinook idx_16944_ifk_albumartistid appdev
+4659; 1259 28214 INDEX chinook idx_16956_ifk_customersupportrepid appdev
+4662; 1259 28215 INDEX chinook idx_16962_ifk_employeereportsto appdev
+4667; 1259 28216 INDEX chinook idx_16974_ifk_invoicecustomerid appdev
+4670; 1259 28217 INDEX chinook idx_16980_ifk_invoicelineinvoiceid appdev
+4671; 1259 28218 INDEX chinook idx_16980_ifk_invoicelinetrackid appdev
+4678; 1259 28219 INDEX chinook idx_16998_ifk_playlisttracktrackid appdev
+4681; 1259 28220 INDEX chinook idx_16998_sqlite_autoindex_playlisttrack_1 appdev
+4682; 1259 28221 INDEX chinook idx_17001_ifk_trackalbumid appdev
+4683; 1259 28222 INDEX chinook idx_17001_ifk_trackgenreid appdev
+4684; 1259 28223 INDEX chinook idx_17001_ifk_trackmediatypeid appdev
+4699; 1259 28224 INDEX f1db circuits_position_idx appdev
+4702; 1259 28225 INDEX f1db idx_17102_url appdev
+4705; 1259 28226 INDEX f1db idx_17125_name appdev
+4712; 1259 28228 INDEX f1db idx_17149_url appdev
+4717; 1259 28229 INDEX f1db idx_17173_raceid appdev
+4720; 1259 28231 INDEX f1db idx_17177_raceid appdev
+4725; 1259 28232 INDEX f1db idx_17199_url appdev
+4730; 1259 28233 INDEX f1db idx_17233_url appdev
+4797; 1259 375955 INDEX geolite blocks_ip4r_idx appdev
+4743; 1259 28234 INDEX geoname geoname_location_idx appdev
+4791; 1259 289317 INDEX imdb name_primaryname_idx1 appdev
+4792; 1259 289330 INDEX imdb uname_name_idx appdev
+4804; 1259 439096 INDEX lastfm idx_439080_idx_tag appdev
+4805; 1259 439095 INDEX lastfm idx_439086_idx_tid appdev
+4806; 1259 439099 INDEX lastfm idx_439092_idx_tag_val appdev
+4807; 1259 439100 INDEX lastfm idx_439092_idx_tid_tag_val appdev
+4808; 1259 439098 INDEX lastfm idx_439092_idx_val appdev
+4793; 1259 289542 INDEX lastfm track_artist_idx appdev
+4809; 1259 445866 INDEX lastfm track_tags_tags_idx appdev
+4794; 1259 289544 INDEX lastfm track_title_idx appdev
+4752; 1259 76244 INDEX public factbook_date_idx appdev
+4763; 1259 28235 INDEX sandbox article_pubdate_idx appdev
+4766; 1259 28236 INDEX sandbox comment_article_idx appdev
+4769; 1259 28237 INDEX sandbox comment_pubdate_idx appdev
+4770; 1259 28238 INDEX twcache message_messageid_idx appdev
+4968; 2618 28239 RULE tweet message_with_counters _RETURN appdev
+4845; 2620 375964 TRIGGER moma artist audit appdev
+4810; 2606 28241 FK CONSTRAINT chinook album album_artistid_fkey appdev
+4843; 2606 256054 FK CONSTRAINT chinook cars cars_color_fkey appdev
+4811; 2606 28246 FK CONSTRAINT chinook customer customer_supportrepid_fkey appdev
+4812; 2606 28251 FK CONSTRAINT chinook employee employee_reportsto_fkey appdev
+4813; 2606 28256 FK CONSTRAINT chinook invoice invoice_customerid_fkey appdev
+4814; 2606 28261 FK CONSTRAINT chinook invoiceline invoiceline_invoiceid_fkey appdev
+4815; 2606 28266 FK CONSTRAINT chinook invoiceline invoiceline_trackid_fkey appdev
+4816; 2606 28271 FK CONSTRAINT chinook playlisttrack playlisttrack_playlistid_fkey appdev
+4817; 2606 28276 FK CONSTRAINT chinook playlisttrack playlisttrack_trackid_fkey appdev
+4818; 2606 28281 FK CONSTRAINT chinook track track_albumid_fkey appdev
+4819; 2606 28286 FK CONSTRAINT chinook track track_genreid_fkey appdev
+4820; 2606 28291 FK CONSTRAINT chinook track track_mediatypeid_fkey appdev
+4821; 2606 28296 FK CONSTRAINT eav support support_contract_fkey appdev
+4822; 2606 28301 FK CONSTRAINT eav support_contract support_contract_type_fkey appdev
+4823; 2606 28306 FK CONSTRAINT geoname country country_continent_fkey appdev
+4824; 2606 28311 FK CONSTRAINT geoname district district_isocode_fkey appdev
+4825; 2606 28316 FK CONSTRAINT geoname feature feature_class_fkey appdev
+4826; 2606 28321 FK CONSTRAINT geoname geoname geoname_class_fkey appdev
+4827; 2606 28326 FK CONSTRAINT geoname geoname geoname_class_fkey1 appdev
+4828; 2606 28331 FK CONSTRAINT geoname geoname geoname_isocode_fkey appdev
+4829; 2606 28336 FK CONSTRAINT geoname geoname geoname_isocode_fkey1 appdev
+4830; 2606 28341 FK CONSTRAINT geoname geoname geoname_isocode_fkey2 appdev
+4831; 2606 28346 FK CONSTRAINT geoname neighbour neighbour_isocode_fkey appdev
+4832; 2606 28351 FK CONSTRAINT geoname neighbour neighbour_neighbour_fkey appdev
+4833; 2606 28356 FK CONSTRAINT geoname region region_isocode_fkey appdev
+4834; 2606 28361 FK CONSTRAINT sandbox article article_category_fkey appdev
+4835; 2606 28366 FK CONSTRAINT sandbox comment comment_article_fkey appdev
+4836; 2606 28371 FK CONSTRAINT tweet activity activity_messageid_fkey appdev
+4837; 2606 28376 FK CONSTRAINT tweet follower follower_follower_fkey appdev
+4838; 2606 28381 FK CONSTRAINT tweet follower follower_following_fkey appdev
+4839; 2606 28386 FK CONSTRAINT tweet list list_owner_fkey appdev
+4840; 2606 28391 FK CONSTRAINT tweet membership membership_listid_fkey appdev
+4841; 2606 28396 FK CONSTRAINT tweet membership membership_member_fkey appdev
+4842; 2606 28401 FK CONSTRAINT tweet message message_userid_fkey appdev
+4844; 2606 377467 FK CONSTRAINT tweet visitor visitors_messageid_fkey appdev
+5077; 0 445859 MATERIALIZED VIEW DATA lastfm track_tags appdev
+5047; 0 28026 MATERIALIZED VIEW DATA twcache message appdev

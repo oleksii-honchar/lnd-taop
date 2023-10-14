@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  db:
+    environment:
+      - TZ=Europe/Madrid
+      - POSTGRES_USER=${PG_USER}
+      - POSTGRES_PASSWORD=${PG_PWD}
+      - POSTGRES_DB=${PG_DB}
+    image: postgres
+    restart: always
+    container_name: $PG_CONTAINER_NAME
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - ${PG_PORT}:${PG_PORT}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+volumes:
+  postgres_data:
