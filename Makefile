@@ -34,6 +34,7 @@ logs: check-project-env-vars ## docker logs
 log: ## docker log for svc=<docker service name>
 	@docker compose logs --follow ${svc}
 
+# make up svc=db
 up:  check-project-env-vars ## docker up, or svc=<svc-name>
 	@docker compose up --build --remove-orphans -d ${svc}
 
@@ -64,3 +65,10 @@ create-user: ## create <usr>
 # make create-db db=factbook usr=taop
 create-db: ## create <db> with <usr>
 	docker exec -it $(PG_CONTAINER_NAME) bash -c "su - $(PG_USER) -c 'createdb -O $(usr) $(db)'"
+
+# CDStore
+# make py-cdstore file="cdstore.py" params=genres
+py-cdstore: ## run python ./TAOP/data/cdstore/src/<file>
+	@printf "${BG_GREY}[py-cdstore] $(file): Start${NC}\n"
+	python3 ./TAOP/data/cdstore/src/$(file) $(params)
+	@printf "\n${BG_GREY}[py-cdstore] $(file): End${NC}\n"

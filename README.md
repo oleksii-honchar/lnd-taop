@@ -1,8 +1,9 @@
-# the-art-of-postgresql
+# lnd-taop
 
 ## Prerequisites
 
 - you need `psql` cli tool
+
 ```bash
 brew install postgresql
 ```
@@ -25,15 +26,15 @@ make restart
 make create-user usr=taop
 make create-db db=chinook usr=taop
 make psql db=chinook
-(psql)chinnok=# \i TAOP/data/cdstore/Chinook_PostgreSql.sql
+(psql)chinook=# \i TAOP/data/cdstore/Chinook_PostgreSql.sql
 ```
 
 - to try Stored Procedure example:
 
  ```bash
  make psql db=chinook
- (psql)chinnok=# \i TAOP/data/cdstore/sql/get_all_albums.sql
- (psql)chinnok=# select * from get_all_albums(127);
+ (psql)chinook=# \i TAOP/data/cdstore/sql/get_all_albums.sql
+ (psql)chinook=# select * from get_all_albums(127);
  ```
 
 ### factbook section
