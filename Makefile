@@ -47,8 +47,11 @@ restart: check-project-env-vars ## restart all
 	@docker compose up --build --remove-orphans -d
 	@docker compose logs --follow
 
-exec-bash: check-project-env-vars ## get shell for svc=<svc-name> container
+exec-bash: check-project-env-vars ## get bash shell for svc=<svc-name> container
 	@docker exec -it ${svc} bash
+
+exec-sh: check-project-env-vars ## get sh shell for svc=<svc-name> container
+	@docker exec -it ${svc} sh
 
 # PostgreSQL
 #make psql db=chinook

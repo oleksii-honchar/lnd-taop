@@ -10,7 +10,11 @@ services:
     image: postgres
     restart: always
     container_name: $PG_CONTAINER_NAME
+    # entrypoint: /usr/local/bin/docker-entrypoint.sh
+    command: postgres -c config_file=/etc/postgresql.conf
     volumes:
+      # - ./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
+      - ./postgresql.conf:/etc/postgresql.conf
       - postgres_data:/var/lib/postgresql/data
     ports:
       - ${PG_PORT}:${PG_PORT}

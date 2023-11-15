@@ -9,7 +9,9 @@ brew install postgresql
 ```
 
 - copy `project.env.dist` -> `projecy.env` and fill the vars
-- `make restart` to laucng PG container
+- `make restart` to launch PG container
+  - There is [postgresql.conf](./postgresql.conf) in repo root with enabled "pg_stat_statements" module. This config is used in container.
+  - To check if extension installed properly, use psql cmd `\dx`
 
 ## How to use
 

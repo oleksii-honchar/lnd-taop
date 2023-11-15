@@ -1,5 +1,7 @@
 \set QUIET 1
-\set PROMPT1 '%/%#%x '
+\set PROMPT1 '%M:%> %n@%/%R%#%x '
+\set PROMPT2 '%M:%> %n@%/%R%# '
+
 \set HISTFILE ~/.psql/.psql_history-:DBNAME
 
 \x auto
