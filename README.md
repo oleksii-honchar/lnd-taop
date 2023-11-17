@@ -53,3 +53,18 @@ Run month data report
 ```bash
 =# \i ./TAOP/data/factbook/month-data.sql
 ```
+
+### f1db
+
+This DB used starting from "4 SQL Toolbox" section (121.8/537). To import MySQL dump into PG one need to convert it:
+
+```console
+make restart # including mysql
+make connect-mysql # as root
+mysql>GRANT ALL PRIVILEGES ON *.* TO 'mysql'@'%';
+mysql>CREATE DATABASE f1;
+mysql>exit
+make restore-mysql-dump dump=./TAOP/data/f1db/f1db_pg.sql db-name=f1 # this not working :(
+```
+
+If console restore cmd not working - do oit using MySQL Workbench ¯\(ツ)/¯

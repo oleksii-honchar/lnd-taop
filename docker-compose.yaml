@@ -1,7 +1,7 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  db:
+  pg:
     environment:
       - TZ=Europe/Madrid
       - POSTGRES_USER=${PG_USER}
@@ -10,10 +10,8 @@ services:
     image: postgres
     restart: always
     container_name: $PG_CONTAINER_NAME
-    # entrypoint: /usr/local/bin/docker-entrypoint.sh
     command: postgres -c config_file=/etc/postgresql.conf
     volumes:
-      # - ./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
       - ./postgresql.conf:/etc/postgresql.conf
       - postgres_data:/var/lib/postgresql/data
     ports:
@@ -24,5 +22,26 @@ services:
         max-size: "10m"
         max-file: "5"
 
+  mysql:
+    environment:
+      - TZ=Europe/Madrid
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    image: mysql
+    restart: always
+    container_name: $MYSQL_CONTAINER_NAME
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - ${MYSQL_PORT}:${MYSQL_PORT}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
 volumes:
   postgres_data:
+  mysql_data:

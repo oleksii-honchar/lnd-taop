@@ -66,6 +66,7 @@ create-user: ## create <usr>
 	docker exec -it $(PG_CONTAINER_NAME) bash -c "su - $(PG_USER) -c 'createuser -SDr $(usr)'"
 
 # make create-db db=factbook usr=taop
+# make create-db db=f1db usr=taop
 create-db: ## create <db> with <usr>
 	docker exec -it $(PG_CONTAINER_NAME) bash -c "su - $(PG_USER) -c 'createdb -O $(usr) $(db)'"
 
@@ -75,3 +76,16 @@ py-cdstore: ## run python ./TAOP/data/cdstore/src/<file>
 	@printf "${BG_GREY}[py-cdstore] $(file): Start${NC}\n"
 	python3 ./TAOP/data/cdstore/src/$(file) $(params)
 	@printf "\n${BG_GREY}[py-cdstore] $(file): End${NC}\n"
+
+# MySQL
+
+connect-mysql: 
+	mysql -h 0.0.0.0 -P $(MYSQL_PORT) -u root --password=$(MYSQL_ROOT_PASSWORD)
+
+# make restore-mysql-dump dump=./TAOP/data/f1db/f1db.sql db-name=f1
+restore-mysql-dump: ## runs mysqldump with cmd args: dump, db-name
+	mysql -h 0.0.0.0 -P $(MYSQL_PORT) -u $(MYSQL_USER) --password=$(MYSQL_PASSWORD) -p $(db-name) < $(dump)
+
+# make restore-mysql-dump1 dump=./TAOP/data/f1db/f1db.sql db-name=f1	
+restore-mysql-dump1: ## runs mysqldump with cmd args: dump, db-name
+	mysqldump -h 0.0.0.0 -P $(MYSQL_PORT) -r $(dump) -u $(MYSQL_USER) --password=$(MYSQL_PASSWORD) $(db-name)
